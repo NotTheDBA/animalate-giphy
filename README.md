@@ -3,7 +3,10 @@ A jQuery api integration example.
 # Animate animal ("animalate") gifs from Giphy.com!
 
 # TODO:
-* stop and start gifs
+* check for empty tag field
+* set rating level
+* style
+
 
 # Possible future enhancements:
 * show "loading" image until image switches
@@ -13,3 +16,4 @@ A jQuery api integration example.
 * reset button (gifs)
 * clear tags button
 * add category button
+* add rating level selection
