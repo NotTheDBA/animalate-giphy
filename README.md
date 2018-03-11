@@ -2,8 +2,7 @@
 A jQuery api integration example.
 # Animate animal ("animalate") gifs from Giphy.com!
 
-# TODO:
-* check for empty tag field
+# TODO: 
 * set rating level
 * style
 

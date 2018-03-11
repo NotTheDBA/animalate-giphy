@@ -15,8 +15,10 @@ $(document).ready(function() {
 });
 
 function addButtonTag(tag) {
-    gifTags.push(tag);
-    loadButtons(gifTags);
+    if (tag.length > 0) {
+        gifTags.push(tag);
+        loadButtons(gifTags);
+    };
 }
 
 function makeButton(tag) {
@@ -43,27 +45,7 @@ function addTagButtonClicks() {
                 method: "GET"
             })
             .then(function(response) {
-                var results = response.data;
-
-                for (var i = 0; i < results.length; i++) {
-                    var gifDiv = $("<div class='item'>");
-
-                    var rating = results[i].rating;
-
-                    var p = $("<p>").text("Rating: " + rating);
-
-                    var giphyImage = $("<img>");
-                    giphyImage.attr("src", results[i].images.fixed_height_still.url);
-                    giphyImage.attr("giphy", results[i].images.fixed_height.url);
-                    giphyImage.attr("static", results[i].images.fixed_height_still.url);
-                    giphyImage.attr("image-state", "static");
-                    giphyImage.addClass("gif-able");
-                    addAnimationClick(giphyImage);
-                    gifDiv.append(p);
-                    gifDiv.append(giphyImage);
-
-                    $("#gif-display").prepend(gifDiv);
-                }
+                loadGifs(response.data);
             });
     });
 
@@ -75,5 +57,22 @@ function addTagButtonClicks() {
             $(this).attr("image-state", newState);
 
         });
+    }
+
+    function loadGifs(results) {
+        for (var i = 0; i < results.length; i++) {
+
+            var giphyImage = $("<img>").addClass("gif-able").attr("image-state", "static");
+            giphyImage.attr("src", results[i].images.fixed_height_still.url);
+            giphyImage.attr("giphy", results[i].images.fixed_height.url);
+            giphyImage.attr("static", results[i].images.fixed_height_still.url);
+            addAnimationClick(giphyImage);
+
+            var gifDiv = $("<div class='item'>");
+            gifDiv.append($("<p>").text("Rating: " + results[i].rating));
+            gifDiv.append(giphyImage);
+
+            $("#gif-display").prepend(gifDiv);
+        }
     }
 }
