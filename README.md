@@ -6,6 +6,7 @@ A jQuery api integration example.
 * stop and start gifs
 
 # Possible future enhancements:
+* show "loading" image until image switches
 * save tag list to local storage
 * select different categories of images to load
 * single load gifs from any button and add to page

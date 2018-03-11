@@ -53,14 +53,27 @@ function addTagButtonClicks() {
                     var p = $("<p>").text("Rating: " + rating);
 
                     var giphyImage = $("<img>");
-                    giphyImage.attr("src", results[i].images.fixed_height.url);
-
-                    gifDiv.prepend(p);
-                    gifDiv.prepend(giphyImage);
+                    giphyImage.attr("src", results[i].images.fixed_height_still.url);
+                    giphyImage.attr("giphy", results[i].images.fixed_height.url);
+                    giphyImage.attr("static", results[i].images.fixed_height_still.url);
+                    giphyImage.attr("image-state", "static");
+                    giphyImage.addClass("gif-able");
+                    addAnimationClick(giphyImage);
+                    gifDiv.append(p);
+                    gifDiv.append(giphyImage);
 
                     $("#gif-display").prepend(gifDiv);
                 }
             });
     });
 
+    function addAnimationClick(clickableImage) {
+
+        $(clickableImage).on("click", function() {
+            var newState = (($(this).attr("image-state") === "static") ? "giphy" : "static")
+            $(this).attr("src", $(this).attr(newState));
+            $(this).attr("image-state", newState);
+
+        });
+    }
 }
