@@ -5,7 +5,6 @@ A jQuery api integration example.
 # TODO:
 * allow users to add buttons
 * stop and start gifs
-* get own api key...
 
 # Possible future enhancements:
 * save tag list to local storage
