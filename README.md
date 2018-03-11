@@ -3,7 +3,6 @@ A jQuery api integration example.
 # Animate animal ("animalate") gifs from Giphy.com!
 
 # TODO:
-* dynamically load buttons from array
 * allow users to add buttons
 * stop and start gifs
 * get own api key...

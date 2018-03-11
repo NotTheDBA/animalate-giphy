@@ -1,8 +1,8 @@
-var gifTags = ["cat", "dog", "platypus", "unicorn"];
+var gifTags = ["cat", "dog", "platypus", "unicorn", "The Rock"];
 
 $(document).ready(function() {
+    loadButtons(gifTags);
 
-    makeButton("The Rock");
     $("button").on("click", function() {
         var gifTag = $(this).attr("gif-tag");
         var queryURL = "https://api.giphy.com/v1/gifs/search?q=" +
@@ -37,5 +37,11 @@ $(document).ready(function() {
 
 function makeButton(tag) {
     var b = $("<button>").attr("gif-tag", tag).text(tag);
-    $("#buttons").append(b);
+    $("#buttons").append(b).append("\n");
+}
+
+function loadButtons(tagList) {
+    tagList.forEach(element => {
+        makeButton(element)
+    });
 }
