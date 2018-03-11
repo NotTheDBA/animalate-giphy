@@ -1,10 +1,13 @@
+var gifTags = ["cat", "dog", "platypus", "unicorn"];
+
 $(document).ready(function() {
 
+    makeButton("The Rock");
     $("button").on("click", function() {
         var gifTag = $(this).attr("gif-tag");
         var queryURL = "https://api.giphy.com/v1/gifs/search?q=" +
             gifTag + "&api_key=dc6zaTOxFJmzC&limit=10";
-        console.log(gifTag)
+
         $.ajax({
                 url: queryURL,
                 method: "GET"
@@ -30,3 +33,9 @@ $(document).ready(function() {
             });
     });
 });
+
+
+function makeButton(tag) {
+    var b = $("<button>").attr("gif-tag", tag).text(tag);
+    $("#buttons").append(b);
+}
