@@ -3,7 +3,6 @@ A jQuery api integration example.
 # Animate animal ("animalate") gifs from Giphy.com!
 
 # TODO: 
-* set rating level
 * style
 
 

@@ -38,8 +38,7 @@ function addTagButtonClicks() {
     $(".tag-btn").on("click", function() {
         var gifTag = $(this).attr("gif-tag");
         var queryURL = "https://api.giphy.com/v1/gifs/search?q=" +
-            gifTag + "&api_key=Lag4SW0Rvz64rsiP0rAttQGD3C3zzl4U&limit=10";
-
+            gifTag + "&api_key=Lag4SW0Rvz64rsiP0rAttQGD3C3zzl4U&limit=10&rating=pg";
         $.ajax({
                 url: queryURL,
                 method: "GET"
