@@ -4,6 +4,7 @@ A jQuery api integration example.
 
 # TODO: 
 * style
+* fix issue with buttons extending beyond widths of page.
 
 
 # Possible future enhancements:
