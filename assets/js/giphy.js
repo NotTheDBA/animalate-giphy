@@ -61,7 +61,8 @@ function addTagButtonClicks() {
     function loadGifs(results) {
         if (results.length > 0) {
             var alert = $("<div>").addClass("alert alert-success").text("Click the images to see them animate");
-            $("#images").prepend(alert);
+            var gifBox = $("<div>").attr("id", "gif-display")
+            $("#images").empty().prepend(gifBox).prepend(alert);
 
             for (var i = 0; i < results.length; i++) {
 

@@ -11,7 +11,6 @@ A jQuery api integration example.
 * save tag list to local storage
 * select different categories of images to load
 * single load gifs from any button and add to page
-* reset button (gifs)
 * clear tags button
 * add category button
 * add rating level selection
