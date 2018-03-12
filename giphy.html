@@ -6,17 +6,21 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Animalate Giphy</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <script src="https://maxcdn.bootstrapcdn.com/bootlint/0.14.2/bootlint.min.js" integrity="sha384-SLfe/wBrCVfyGjtLhfUmA5cYQLnNVTRmwMUJ11s7x5HxXCKom2oeEwX9bvY74CAs" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" media="screen" href="assets/css/bootstrap-slate.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="assets/css/giphy.css" />
     <script src="assets/js/giphy.js"></script>
 </head>
 
 
 <body>
-    <p>
-        <div id="buttons">
+    <h1 class="text-success"><strong>Animalate Giphy</strong></h1>
+    <h3 class="text-success">Animate animal ("animalate") gifs from Giphy.com!</h3>
+    <nav class="navbar navbar-expand-lg bg-dark justify-content-center">
+        <div id="buttons" class=" btn-group">
         </div>
-    </p>
+    </nav>
     <p>
         <div id="tag-request-form">
             <!-- Input Form -->
@@ -25,10 +29,11 @@
             </form>
         </div>
     </p>
-    <p>
+    <section id="images" class="center-text">
+        <!-- <div class="alert alert-success">Click the images to see them animate.</div> -->
         <div id="gif-display">
         </div>
-    </p>
+    </section>
 
 </body>
 

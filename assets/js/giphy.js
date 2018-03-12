@@ -22,7 +22,7 @@ function addButtonTag(tag) {
 }
 
 function makeButton(tag) {
-    var b = $("<button>").attr("gif-tag", tag).addClass("tag-btn").text(tag);
+    var b = $("<button>").attr("gif-tag", tag).addClass("btn btn-outline-success tag-btn").text(tag);
     $("#buttons").append(b).append("\n");
 }
 
@@ -59,19 +59,27 @@ function addTagButtonClicks() {
     }
 
     function loadGifs(results) {
-        for (var i = 0; i < results.length; i++) {
+        if (results.length > 0) {
+            var alert = $("<div>").addClass("alert alert-success").text("Click the images to see them animate");
+            $("#images").prepend(alert);
 
-            var giphyImage = $("<img>").addClass("gif-able").attr("image-state", "static");
-            giphyImage.attr("src", results[i].images.fixed_height_still.url);
-            giphyImage.attr("giphy", results[i].images.fixed_height.url);
-            giphyImage.attr("static", results[i].images.fixed_height_still.url);
-            addAnimationClick(giphyImage);
+            for (var i = 0; i < results.length; i++) {
 
-            var gifDiv = $("<div class='item'>");
-            gifDiv.append($("<p>").text("Rating: " + results[i].rating));
-            gifDiv.append(giphyImage);
+                var giphyImage = $("<img>").addClass("gif-able").attr("image-state", "static");
+                giphyImage.attr("src", results[i].images.fixed_height_still.url);
+                giphyImage.attr("giphy", results[i].images.fixed_height.url);
+                giphyImage.attr("static", results[i].images.fixed_height_still.url);
+                addAnimationClick(giphyImage);
 
-            $("#gif-display").prepend(gifDiv);
+                var caption = $("<figcaption>").addClass("center-text");
+                caption.text(results[i].title.replace('GIF', '').replace('gif', ''));
+
+                var gifDiv = $("<figure>").addClass("item");
+                gifDiv.append(giphyImage);
+                gifDiv.append(caption);
+
+                $("#gif-display").prepend(gifDiv);
+            }
         }
     }
 }
