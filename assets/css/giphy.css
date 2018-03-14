@@ -1,7 +1,19 @@
+/* Allows images to float beside each other, instead of lining up beneath. */
+
 figure {
     float: left;
 }
 
+
+/* Centers content (not just text) */
+
 .center-text {
     text-align: center;
+}
+
+
+/* Over-rides Bootstrap buttons to allow button row to wrap. */
+
+.btn-group {
+    display: inline;
 }
