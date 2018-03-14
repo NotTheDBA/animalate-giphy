@@ -1,4 +1,4 @@
-var gifTags = ["cat", "dog", "platypus", "unicorn", "The Rock", "xxxxxxxxxx", "xxxxxxxxxx", "xxxxxxxxxx", "xxxxxxxxxx", "xxxxxxxxxx", "xxxxxxxxxx", "xxxxxxxxxx", "xxxxxxxxxx", "xxxxxxxxxx", "xxxxxxxxxx", "xxxxxxxxxx", "xxxxxxxxxx", "xxxxxxxxxx", "xxxxxxxxxx", "xxxxxxxxxx", "xxxxxxxxxx", "xxxxxxxxxx", "xxxxxxxxxx", "xxxxxxxxxx", "xxxxxxxxxx"];
+var gifTags = ["cat", "dog", "platypus", "unicorn", "The Rock"];
 
 $(document).ready(function() {
     loadButtons(gifTags);
