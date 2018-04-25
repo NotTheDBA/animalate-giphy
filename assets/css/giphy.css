@@ -5,6 +5,15 @@ figure {
 }
 
 
+/* fully justifies image rows */
+
+#gif-display {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+
 /* Centers content (not just text) */
 
 .center-text {
